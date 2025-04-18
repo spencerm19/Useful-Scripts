@@ -43,8 +43,11 @@ if ($members.Count -eq 0) {
 } else {
     $members | Select-Object Name, PrimarySmtpAddress, RecipientType | Format-Table -AutoSize
     
-    # Export to CSV in the same directory as the script
-    $exportPath = Join-Path $scriptPath "O365GroupMembers.csv"
+    # Get current date in MMDDYYYY format
+    $currentDate = Get-Date -Format "MMddyyyy"
+    
+    # Export to CSV in the same directory as the script with date in filename
+    $exportPath = Join-Path $scriptPath "O365GroupMembers-$currentDate.csv"
     
     # Export members to CSV
     $members | Select-Object Name, PrimarySmtpAddress, RecipientType |

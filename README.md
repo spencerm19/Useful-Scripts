@@ -2,10 +2,10 @@
 
 This is a collection of useful scripts to quickly accomplish a variety of internal IT related tasks.
 
-## Get-VivaCommunityMembers.ps1
+## Get-O365GroupMembers.ps1
 
 ### Description
-This PowerShell script retrieves and exports the members of a specified Microsoft 365 Group or Viva Engage Community. It connects to Exchange Online, fetches member information, displays it in the console, and exports the data to a CSV file.
+This PowerShell script retrieves and exports the members of a specified Microsoft 365 Group. It connects to Exchange Online, fetches member information, displays it in the console, and exports the data to a CSV file.
 
 ### Prerequisites
 - PowerShell 5.1 or later
@@ -31,7 +31,7 @@ This PowerShell script retrieves and exports the members of a specified Microsof
 2. Navigate to the script directory
 3. Run the script:
    ```powershell
-   .\Get-VivaCommunityMembers.ps1
+   .\Get-O365GroupMembers.ps1
    ```
 4. When prompted, enter the email address of the group/community
 5. If not already connected, authenticate to Exchange Online when prompted
@@ -43,7 +43,7 @@ This PowerShell script retrieves and exports the members of a specified Microsof
   - Total member count
   - Export file location
 
-- **CSV File** (`O365GroupMembers.csv`):
+- **CSV File** (`O365GroupMembers-MMDDYYYY.csv`):
   - Name
   - PrimarySmtpAddress
   - RecipientType
@@ -51,7 +51,7 @@ This PowerShell script retrieves and exports the members of a specified Microsof
 
 ### Notes
 - The script automatically disconnects from Exchange Online upon completion
-- The CSV file is created in the same directory as the script
+- The CSV file is created in the same directory as the script with the current date in the filename (e.g., O365GroupMembers-01012024.csv)
 - Existing Exchange Online sessions are preserved and reused
 - Error handling is implemented for group retrieval
 
