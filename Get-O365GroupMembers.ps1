@@ -1,3 +1,12 @@
+# Script: Get-O365GroupMembers.ps1
+# Description: Retrieves and exports members of a Microsoft 365 Group to CSV
+#
+# Note: This script requires PowerShell execution policy to be set to RemoteSigned or less restrictive.
+# To set the execution policy, run the following command as administrator:
+#     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+# Alternatively, you can run the script using:
+#     powershell -ExecutionPolicy Bypass -File .\Get-O365GroupMembers.ps1
+
 # Function to ensure module is installed and imported
 function Install-RequiredModule {
     param (
